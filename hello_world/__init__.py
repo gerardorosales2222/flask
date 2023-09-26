@@ -57,8 +57,8 @@ def init_app():
 
 	@app.route('/actors', methods= ['POST'])
 	def create_actor():
-		query= "INSERT INTO sakila.actor first_name, last_name, last_update VALUES(%s,%s,%s);"
-		request.args.get('first_name', ''),
+		query= "INSERT INTO sakila.actor (first_name, last_name, last_update VALUES(%s,%s,%s);"
+		params = request.args.get('first_name', ''),
 		request.args.get('last_name', ''),
 		request.args.get('last_update', '')
 		DatabaseConnection.execute_query (query,params)
